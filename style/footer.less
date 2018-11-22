@@ -1,0 +1,89 @@
+// start footer section
+.footer-section {
+	width: 100%;
+	background-color: #324d5b;
+	padding: 78px 0;
+
+	@media (max-width: 959px) {
+		padding: 69px 0;
+	}
+
+	&-box {
+		@media (min-width: 960px) and (max-width: 1439px) {
+			.box-mixin (900px);
+		}
+
+		@media (max-width: 959px) {
+			display: none;
+		}
+		
+		.box-mixin (1100px);
+		.flex-mixin;
+
+		&-left-part {
+			.flex-mixin;
+
+			p {
+				.paragraph-mixin (@second-color, 16px, 238px);
+				text-align: left;
+				padding-left: 30px;
+
+				a {
+					color: @second-color;
+					text-decoration: underline;
+				}
+			}
+		}
+
+		&-right-part {
+			a:not(:last-child) {
+				margin-right: 20px;
+			}
+
+			a {
+				.button-mixin (150px, @second-color, @second-color);
+				display: inline-block;
+				vertical-align: middle;
+
+				img {
+					margin-right: 15px;
+				}
+			}
+		}
+	}
+
+	&-box-mobile {
+		@media (max-width: 959px) {
+			display: flex;
+		}
+
+		.box-mixin (480px);
+		.flex-mixin (column, space-around, center);
+		display: none;
+
+		&-links {
+			width: 193px;
+			.flex-mixin;
+			
+			a {
+				.flex-mixin (row, center, center);
+				.button-mixin (150px, @second-color, @second-color);
+				width: 50px;
+				height: 46px;
+
+			}
+		}
+
+		p {
+			.paragraph-mixin (@second-color, 16px, 238px);
+			text-align: center;
+			padding-top: 50px;
+
+			a {
+				color: @second-color;
+				text-decoration: underline;
+			}
+		}
+
+	}
+}

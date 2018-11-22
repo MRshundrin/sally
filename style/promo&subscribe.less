@@ -1,0 +1,130 @@
+// start promo section
+.promo-section {
+	.flex-mixin (@flex-direction: column);
+	padding: 90px 0 130px 0;
+	position: relative;
+
+	&-title {
+		.title-mixin (@font-size: 35px);	
+	}
+
+	&-paragraph {
+		.paragraph-mixin (@width: 608px);
+		padding-bottom: 64px;
+	}
+}
+
+.promo-demonstration {
+	 width: 896px;
+	.flex-mixin (row, center, center);
+	position: relative;
+}
+
+.globe-box {
+	width: 90px;
+	height: 302px;
+	position: absolute;
+	transform: translateX(20px);
+
+	&-left {
+		.flex-mixin (column, space-between, flex-end);
+		left: 185px;
+
+		&-center {
+			align-self: flex-start;
+		}
+
+		&-top,
+		&-center,
+		&-bottom {
+			
+			&-hover {
+				.flex-mixin;
+				position: absolute;
+				transform: translate(-75%, -10%);
+				display: none;	
+			}
+
+			&:hover > &-hover {
+				display: flex;
+			}	
+		}
+	}
+
+
+	&-right {
+		.flex-mixin (column, space-between, flex-start);
+		position: absolute;
+		right: 220px;
+	
+		
+		&-center {
+			align-self: flex-end;
+		}
+
+		&-top,
+		&-center,
+		&-bottom {
+			
+			&-hover {
+				.flex-mixin;
+				width: 260px;
+				position: absolute;
+				transform: translateY(-95%);
+				display: none;	
+			}
+
+			&:hover > &-hover {
+				display: flex;
+			}	
+		}
+	}
+}
+
+.customization-box-in-promo {
+	width: 176px;
+
+	h3 {
+		.title-mixin (@font-size: 14px);
+		text-transform: uppercase;
+	}
+
+	p {
+		.paragraph-mixin (@font-size: 13px);
+		text-align: left;
+	}
+}
+// end promo section
+
+.subscribe-box {
+	width: 100%;
+	background-color: @main-color;
+	.flex-mixin (@justify-content: center);
+	
+	&-input {
+		width: 430px;
+		background: transparent;
+		border: 0;
+		color: #ffffff;
+		font-family: "Varela Round";
+		font-size: 25px;
+		margin-left: 102px;
+
+		&::-webkit-input-placeholder { color: @second-color; opacity: .5; }
+	}
+
+	&-button {
+		.button-mixin (165px, @main-color, @second-color);
+		line-height: 36px;
+		background: @second-color;
+		margin: 42px 0;
+	}
+}
+
+@media (max-width: 959px) {
+	.promo-section,
+	.subscribe-box {
+		display: none;
+	}
+	
+}

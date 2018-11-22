@@ -1,0 +1,235 @@
+// start clients section
+.clients-section {
+	width: 100%;
+	.flex-mixin (@flex-direction: column);
+	padding-top: 79px;
+
+	&-title {
+		.title-mixin (@font-size: 25px);
+		padding-bottom: 67px;
+	}
+
+	&-links-box {
+		.flex-mixin (@justify-content: center);	
+		padding-bottom: 85px;
+
+
+		a:not(:last-child) {
+			margin-right: 65px;
+		}
+
+		a {
+			width: 200px;
+			height: 35px;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+		.canon {
+			background-image: url(../images/canon.png);
+		}
+
+		.skagen {
+			background-image: url(../images/skagen.png);
+			
+		}
+
+		.sony {
+			background-image: url(../images/sony.png);
+			
+		}
+
+		.marvel {
+			background-image: url(../images/marvel.png);
+			width: 90px;	
+		}
+
+	}
+
+	.subscribe-box-mobile {
+		display: none;
+	}
+
+	@media (max-width: 959px) {
+		.clients-section-links-box {
+			.flex-mixin (column, space-between, center);
+			height: 290px;
+
+			a:not(:last-child) {
+				margin-right: 0;
+			}
+		}
+
+		.subscribe-box-mobile {
+			display: block;
+			width: 100%;
+			background-color: @main-color;
+			padding: 60px 0 70px 0;
+			.flex-mixin (column, space-between, center);
+			
+			
+			form {
+				.flex-mixin (column);
+			}
+
+			&-input {
+				min-width: 410px;
+				max-width: 430px;
+				background: transparent;
+				border: 0;
+				color: #ffffff;
+				font-family: "Varela Round";
+				font-size: 25px;
+				margin: 40px 0 35px 0;
+
+				&::-webkit-input-placeholder { color: @second-color; opacity: .5; }
+			}
+
+			&-button {
+				.button-mixin (162px, @main-color, @second-color);
+				margin: 0;
+				line-height: 36px;
+				background: @second-color;
+			}
+		}
+			
+	}
+}
+
+
+.twitter-feedback {
+	.flex-mixin (column);
+	width: 100%;
+	height: 442px;
+	background-image: url(../images/twitterbg.png);
+	background-color: #324d5b;
+	box-sizing: border-box;
+	padding: 75px 25px;
+
+	&-paragraph {
+		.paragraph-mixin (@second-color, 19px, 568px);
+		font-family: "Varela Round";
+
+		a {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		span {
+			color: #bdbdbd;
+			font-family: 'Roboto', sans-serif;
+			font-size: 16px;
+			letter-spacing: 0.48px;
+		}
+	}
+
+	&-paragraph::before {
+		display: block;
+		content: "";
+		width: 38px;
+		height: 30px;
+		background-image: url(../images/bird-twitter.png);
+		margin: 0 auto 53px auto;
+	}
+
+	&-nickname {
+		.paragraph-mixin (@second-color, 19px, 568px);
+		font-family: "Varela Round";
+
+			span {
+				color: #bdbdbd;
+				font-family: 'Roboto', sans-serif;
+				font-size: 16px;
+				letter-spacing: 0.48px;
+			}
+	}	
+}
+
+.clients-section-statistics {
+	width: 100%;
+	background-color: #f6f6f6;
+
+	&-box {
+		.flex-mixin (@justify-content: center);
+		text-align: center;
+		padding: 120px 50px;
+
+		div:not(:last-child) {
+			margin-right: 160px;
+		}	
+
+		div::before {
+			display: block;
+			content: "";
+			width: 32px;
+			height: 32px;
+			background-position: center;
+			background-repeat: no-repeat;
+			margin: 0 auto 28px auto;
+		}
+
+		h2 { 
+			.title-mixin (@font-size: 35px);
+		}
+
+		p {
+			.paragraph-mixin (@font-size: 14px);
+
+			&::before {
+				display: block;
+				content: "";
+				width: 30px;
+				height: 2px;
+				background-color: #e46258;
+				margin: 25px auto;
+			}
+		}
+
+		.users-statistic::before {
+			background-image: url(../images/icon-person2.png);
+		}
+
+		.like-statistic::before {
+			background-image: url(../images/like-icon.png);
+		}
+
+		.guys-statistic::before {
+			background-image: url(../images/camera.png);
+		}
+
+		.people-statistic::before {
+			background-image: url(../images/icon-person2.png);
+		}
+
+	}
+}
+
+
+
+@media (min-width: 960px) and (max-width: 1439px) {
+	.clients-section-statistics-box {
+
+		div:not(:last-child) {
+			margin-right: 100px;
+		}
+	}
+}
+
+@media (max-width: 959px) {
+	.clients-section-statistics-box {
+		.box-mixin (361px);
+		padding-top: 60px;
+
+		.flex-mixin (row, space-between, flex-start);
+		flex-wrap: wrap;
+		
+		div {
+			padding-top: 60px;
+		}
+
+		div:not(:last-child) {
+			margin-right: 0;
+		}	
+	}	
+}
+//  end clients section

@@ -1,0 +1,77 @@
+// start services section
+.services-box {
+	.flex-mixin;
+	.box-mixin (1313px);
+	padding: 100px 0 117px 0;
+	
+	&-column {
+		width: 355px;
+		text-align: center;	
+	}
+
+	&-title {
+		.title-mixin;
+		letter-spacing: 0.6px;
+		margin-bottom: 27px;
+		text-transform: uppercase;
+
+		&::before {
+			display: block;
+			content: "";
+			width: 64px;
+			height: 64px;
+			margin: 0 auto 30px auto;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+	}
+
+	&-paragraph {
+		.paragraph-mixin (@font-size: 13px);
+	}
+
+	.customization::before {
+	background-image: url(../images/settings.png);
+	}
+
+	.customer::before {
+		background-image: url(../images/clock.png);
+	}
+
+	.analytics::before {
+		background-image: url(../images/icon-cloud3.png);
+	}
+}
+
+@media (min-width: 960px) and (max-width: 1439px) {
+		.services-box {
+			justify-content: space-around;
+
+			&-column {
+				width: 250px;
+			}
+		}
+	}
+
+.responsive-box {
+	.flex-mixin (@justify-content: center);
+	background-color: @main-color;
+	width: 100%;
+	padding: 33px 0;
+	
+	& p {
+		.paragraph-mixin (@second-color, 25px, 200px);
+		padding-left: 35px;
+	}
+}
+
+@media (max-width: 959px) {
+	.services-box {
+		.flex-mixin (column);
+		padding: 45px 0 117px 0;
+
+		&-column {
+			padding-top: 55px;
+		}
+	}
+}

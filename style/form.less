@@ -1,0 +1,130 @@
+
+// start section with form
+.form-section {
+	text-align: center;
+	padding: 110px 0 105px 0;
+
+	&-title {
+		.title-mixin (@font-size: 35px);
+		padding-bottom: 26px;
+	}
+
+	&-paragraph {
+		.paragraph-mixin (@width: 597px);
+		margin: 0 auto;
+		padding-bottom: 58px;
+	}
+
+	&-form {
+		.flex-mixin (column, space-between, space-between);
+		.box-mixin (1100px);
+		flex-wrap: wrap;
+		height: 188px;
+		
+
+		input {
+			.input-mixin;
+			background-position: 507px;
+			background-repeat: no-repeat;
+			margin-right: 25px;
+		}
+
+		textarea {
+			.input-mixin (538px, 112px);
+			padding-top: 18px;
+			resize: none;
+		}
+
+		button {
+			.button-mixin (@width: 537px);
+		}
+
+		.name-in-form {
+			background-image: url(../images/icon-person.png);
+		}
+		.email-in-form {
+			background-image: url(../images/mail-icon.png);
+		}
+		.phone-in-form {
+			background-image: url(../images/phone-icon.png);
+		}	
+	}
+
+	@media (min-width: 960px) and (max-width: 1439px) {
+
+		.form-section-form {
+			.box-mixin (900px);
+
+			input {
+				width: 413px;
+				background-position: 390px;
+			}
+
+			textarea {
+				width: 438px;
+			}
+
+			button {
+				width: 437px;
+			}
+		}
+	}
+
+	.social-box {
+		padding-top: 55px;
+
+		&:before {
+			display: block;
+			content: "";
+			width: 169px;
+			height: 4px;
+			background-color: #f6f6f6;
+			margin: 0 auto 43px auto;
+		}
+
+		ul {
+			.flex-mixin (@justify-content: center);
+
+			li:not(:last-child) {
+				margin-right: 23px;
+			}
+		}
+	}	
+}
+
+@media (max-width: 959px) {
+
+	.form-section {
+		&-title {
+			padding: 0 60px 26px 60px;
+		}
+
+		&-paragraph {
+			padding: 0 40px 58px 40px;
+		}
+
+		&-form {
+			width: 420px;
+			height: 420px;
+			margin: 0 auto;
+		
+
+			input {
+				width: 420px;
+				background-position: 380px;
+			}
+
+			textarea {
+				width: 420px;
+			}
+
+			button {
+				width: 420px;
+			}
+		}
+	}
+
+
+	
+}
+// end section with form

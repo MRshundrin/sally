@@ -1,0 +1,207 @@
+// start connection section
+.connection-section {
+	.flex-mixin (@flex-direction: column);
+	width: 100%;
+	padding: 78px 0 82px 0;
+	position: relative;
+	overflow: hidden;
+
+	&-top {
+		.flex-mixin (@align-items: flex-start);
+		width: 100%;
+		box-sizing: border-box;
+		padding: 0 30px 154px 30px;
+
+		h2 {
+			.title-mixin (@font-size: 35px);
+		}
+
+		&-contact {
+			.flex-mixin (column, flex-start, flex-start);
+			width: 50%;
+
+			.contact-box {
+				.flex-mixin ( @align-items: flex-start);
+				flex-wrap: wrap;
+				width: 100%;
+
+				div {
+					.flex-mixin (column, flex-start, flex-start);
+					width: 155px;
+					padding-top: 50px;
+
+					&::before {
+						display: block;
+						content: "";
+						width: 32px;
+						height: 32px;
+						background-repeat: no-repeat;
+						margin-bottom: 30px;	
+					}
+
+					
+					h3 {
+						.title-mixin (@font-size: 14px;);
+						text-transform: uppercase;
+					}
+
+					a {
+						.paragraph-mixin (@font-size: 13px, @width: 100%);
+						padding-top: 15px;
+						text-align: left;
+					}
+				}
+
+				.location::before {
+					background-image: url(../images/location.png);
+				}
+				.email::before {
+					background-image: url(../images/envelope.png);
+				}
+				.phone-number::before {
+					background-image: url(../images/call.png);
+				}
+				.social-media::before {
+					background-image: url(../images/like.png);
+				}
+			}
+		}
+
+
+		&-form {
+			width: 50%;
+			padding-left: 70px;
+
+			form {
+				.flex-mixin (row, space-between, flex-start);
+				flex-wrap: wrap;
+				padding-left: 20px;
+				padding-top: 50px;
+
+				div {
+					.flex-mixin (column);
+				}
+
+				.name-in-form {
+					background-image: url(../images/icon-person.png);
+					}
+
+				.email-in-form {
+					background-image: url(../images/mail-icon.png);
+					background-color: #e2574c;
+					color: @second-color;
+					&::-webkit-input-placeholder { 
+						color: @second-color; 
+					}
+				}
+			}
+
+			input {
+				.input-mixin;
+				width: 420px;
+				margin-bottom: 25px;
+				background-position: 388px;
+				background-repeat: no-repeat;
+			}
+
+			textarea {
+				.input-mixin (420px, 117px);
+				padding-top: 18px;
+				resize: none;
+				margin-left: 30px;
+			}
+
+			button {
+				.button-mixin;
+				align-self: flex-start;
+			}
+		}
+	}
+
+	@media (min-width: 1440px) and (max-width: 1919px) {
+		.connection-section-top {
+			.box-mixin (1100px);
+
+			form {
+
+				.flex-mixin (column, space-between, center);
+					width: 520px;
+					padding: 0px;
+
+					input {
+						width: 520px;
+						background-position: 480px;
+					}
+
+					textarea {
+						width: 520px;
+						margin: 0 0 35px 0;
+					}
+			}
+		}
+
+	}
+
+	@media (min-width: 960px) and (max-width: 1439px) {
+		.connection-section-top {
+			.box-mixin (900px);
+
+			form {
+
+				.flex-mixin (column, space-between, center);
+					padding: 0px;
+
+					textarea {
+						margin: 0 0 35px 0;
+					}
+			}
+		}
+
+	}
+
+	@media (max-width: 959px) {
+		.connection-section-top {
+			.box-mixin (480px);
+			flex-wrap: wrap;
+
+			&-contact {
+				width: 100%;
+
+				.contact-box {
+					flex-direction: row;
+					padding-bottom: 60px;
+
+				}
+			}
+
+			&-form {
+				width: 100%;
+				padding: 0;
+
+				form {
+					padding-left: 0;
+
+					textarea {
+						margin: 0;
+						margin-bottom: 35px;
+					}
+				}
+			}
+		}
+	}
+
+	&-map {
+		height: 400px;
+	}
+
+	.link-to-home {
+		position: absolute;
+		bottom: 145px;
+	}
+
+	.copyright {
+		padding-top: 88px;
+		.paragraph-mixin (@font-size: 13px);
+	}
+}
+// end connection section

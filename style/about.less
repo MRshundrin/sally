@@ -1,0 +1,22 @@
+// start section "about"
+.about-box {
+	.flex-mixin (column);
+	padding: 160px 25px 120px 25px;
+	
+	
+	&-title {
+		.title-mixin (@font-size: 35px);
+		margin-top: 60px;
+		text-align: center;
+	}
+
+	&-paragraph {
+		.paragraph-mixin (@width: 608px);
+		padding-bottom: 57px;
+	}
+
+	&-link {
+		.button-mixin;
+	}
+}
+// end section "about"
